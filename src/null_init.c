@@ -24,8 +24,12 @@
 //    distribution.
 //
 //========================================================================
+// It is fine to use C99 in this file because it will not be built with VS
+//========================================================================
 
 #include "internal.h"
+
+#include <stdlib.h>
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -35,11 +39,14 @@
 int _glfwPlatformInit(void)
 {
     _glfwInitTimerPOSIX();
+    _glfwPollMonitorsNull();
+
     return GLFW_TRUE;
 }
 
 void _glfwPlatformTerminate(void)
 {
+    free(_glfw.null.clipboardString);
     _glfwTerminateOSMesa();
 }
 

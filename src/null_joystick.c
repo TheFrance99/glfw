@@ -23,6 +23,8 @@
 //    distribution.
 //
 //========================================================================
+// It is fine to use C99 in this file because it will not be built with VS
+//========================================================================
 
 #include "internal.h"
 
@@ -30,6 +32,15 @@
 //////////////////////////////////////////////////////////////////////////
 //////                       GLFW platform API                      //////
 //////////////////////////////////////////////////////////////////////////
+
+GLFWbool _glfwPlatformInitJoysticks(void)
+{
+    return GLFW_TRUE;
+}
+
+void _glfwPlatformTerminateJoysticks(void)
+{
+}
 
 int _glfwPlatformPollJoystick(_GLFWjoystick* js, int mode)
 {
