@@ -3,8 +3,8 @@ project "GLFW"
     language "C"
 	staticruntime "on"    
 	
-	targetdir (outputdir)
-    objdir (outputintdir)
+	targetdir (vendor_output_dir)
+    objdir (vendor_output_int_dir)
 
 	files
 	{
