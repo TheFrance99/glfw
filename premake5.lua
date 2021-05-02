@@ -1,7 +1,7 @@
 project "GLFW"
     kind "StaticLib"
     language "C"
-	staticruntime "on"    
+	staticruntime "off"    
 	
 	targetdir (vendor_output_dir)
     objdir (vendor_output_int_dir)
